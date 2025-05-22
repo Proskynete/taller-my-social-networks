@@ -5,7 +5,7 @@ import ME from "../assets/images/me.webp";
 const {
   description,
   technologies,
-  socialMedia,
+  socialNetworks,
   yearsOfExperience,
   projects,
   talksAndWorkshops,
@@ -46,7 +46,7 @@ const {
       <ul class="text-white/70">
         {
           technologies.map((technology: string) => (
-            <li class="list-none inline-block relative pl-[14px] pr-[4px] before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-[5px] before:h-[5px] before:rounded-md before:bg-white/80">
+            <li class="list-none inline-block relative pl-[8px] pr-[8px] before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-[5px] before:h-[5px] before:rounded-md before:bg-white/80">
               {technology}
             </li>
           ))
@@ -62,19 +62,21 @@ const {
       </h6>
       <ul class="space-x-1">
         {
-          socialMedia.map((social: { name: string; link: string }) => (
-            <li class="list-none inline-block">
-              <a
-                class="inline-block group w-[44px] h-[44px] rounded-full bg-white/15 text-white relative z-[1] overflow-hidden before:content-[''] before:absolute before:-z-[1] before:left-0 before:top-0 before:w-full before:h-full before:bg-themeGradient before:opacity-0 hover:before:opacity-20 before:transition-all before:ease-linear before:duration-100"
-                href={social.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                title={social.name}
-              >
-                {social.name}
-              </a>
-            </li>
-          ))
+          socialNetworks.map(
+            (social_network: { name: string; link: string }) => (
+              <li class="list-none inline-block">
+                <a
+                  class="inline-block group w-[44px] h-[44px] rounded-full bg-white/15 text-white relative z-[1] overflow-hidden before:content-[''] before:absolute before:-z-[1] before:left-0 before:top-0 before:w-full before:h-full before:bg-themeGradient before:opacity-0 hover:before:opacity-20 before:transition-all before:ease-linear before:duration-100"
+                  href={social_network.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={social_network.name}
+                >
+                  {social_network.name}
+                </a>
+              </li>
+            )
+          )
         }
       </ul>
     </div>

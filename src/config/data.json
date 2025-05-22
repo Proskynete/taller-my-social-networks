@@ -1,0 +1,42 @@
+{
+  "header": {
+    "name": "Eduardo Álvarez",
+    "position": "Experienced Consultant",
+    "company": "Amaris"
+  },
+  "my_information": {
+    "description": "Software engineer enfocado en Frontend con más de 9 años de experiencia en los cuales he trabajado en diferentes proyectos y empresas.",
+    "years_of_experience": 9,
+    "technologies": [
+      "JavaScript",
+      "React",
+      "Astro",
+      "Tailwind CSS",
+      "Node",
+      "Vitest"
+    ],
+    "social_networks": [
+      {
+        "name": "LinkedIn",
+        "link": "https://www.linkedin.com/in/eduardoalvarezc/",
+        "icon": "linkedin"
+      },
+      {
+        "name": "GitHub",
+        "link": "https://github.com/Proskynete",
+        "icon": "github"
+      },
+      {
+        "name": "Instagram",
+        "link": "https://www.instagram.com/eduardo_alvarez.dev/",
+        "icon": "instagram"
+      },
+      {
+        "name": "Sitio web",
+        "link": "https://eduardoalvarez.dev/",
+        "icon": "website"
+      }
+    ]
+  },
+  "projects": []
+}

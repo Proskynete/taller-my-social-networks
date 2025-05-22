@@ -3,27 +3,23 @@ import "../assets/css/styles.css";
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
 import MyInformation from "../components/MyInformation.astro";
+
+import data from "../config/data.json";
 ---
 
 <Layout>
   <Header
-    name="Eduardo Álvarez"
-    position="Experienced Consultant"
-    company="Amaris"
+    name={data.header.name}
+    position={data.header.position}
+    company={data.header.company}
   />
 
   <MyInformation
-    description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
-    technologies={["React", "TypeScript", "Tailwind CSS"]}
-    socialMedia={[
-      {
-        name: "LinkedIn",
-        link: "https://www.linkedin.com/in/eduardoalvarezc/",
-        icon: "LinkedIn",
-      },
-    ]}
+    description={data.my_information.description}
+    technologies={data.my_information.technologies}
+    socialNetworks={data.my_information.social_networks}
     projects={6}
-    yearsOfExperience={9}
+    yearsOfExperience={data.my_information.years_of_experience}
     talksAndWorkshops={6}
   />
 </Layout>
