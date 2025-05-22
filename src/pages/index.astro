@@ -2,6 +2,7 @@
 import "../assets/css/styles.css";
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
+import MyInformation from "../components/MyInformation.astro";
 ---
 
 <Layout>
@@ -9,5 +10,20 @@ import Layout from "../layouts/Layout.astro";
     name="Eduardo Álvarez"
     position="Experienced Consultant"
     company="Amaris"
+  />
+
+  <MyInformation
+    description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+    technologies={["React", "TypeScript", "Tailwind CSS"]}
+    socialMedia={[
+      {
+        name: "LinkedIn",
+        link: "https://www.linkedin.com/in/eduardoalvarezc/",
+        icon: "LinkedIn",
+      },
+    ]}
+    projects={6}
+    yearsOfExperience={9}
+    talksAndWorkshops={6}
   />
 </Layout>
