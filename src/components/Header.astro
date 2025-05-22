@@ -1,0 +1,16 @@
+---
+const { name, position, company } = Astro.props;
+---
+
+<div class="py-24 md:py-28 xl:py-32 text-center">
+  <h1
+    class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold stroke-text"
+  >
+    {name}
+  </h1>
+  <p
+    class="font-outfit font-medium text-md lg:text-lg xl:text-xl mt-0 md:mt-2 lg:mt-3 xl:mt-4 text-pretty"
+  >
+    {position}<span class="text-slate-700 mx-1">en</span>{company}
+  </p>
+</div>
