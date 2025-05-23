@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 import ME from "../assets/images/me.webp";
 
 const {
@@ -60,19 +61,19 @@ const {
       >
         Mis redes sociales
       </h6>
-      <ul class="space-x-1">
+      <ul class="flex space-x-1">
         {
           socialNetworks.map(
-            (social_network: { name: string; link: string }) => (
-              <li class="list-none inline-block">
+            (social_network: { name: string; link: string; icon: string }) => (
+              <li class="list-none">
                 <a
-                  class="inline-block group w-[44px] h-[44px] rounded-full bg-white/15 text-white relative z-[1] overflow-hidden before:content-[''] before:absolute before:-z-[1] before:left-0 before:top-0 before:w-full before:h-full before:bg-themeGradient before:opacity-0 hover:before:opacity-20 before:transition-all before:ease-linear before:duration-100"
+                  class="flex items-center justify-center w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-200 ease-in-out"
                   href={social_network.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   title={social_network.name}
                 >
-                  {social_network.name}
+                  <Icon name={social_network.icon} />
                 </a>
               </li>
             )
