@@ -1,6 +1,7 @@
 ---
-import data from "../config/data.json";
+import { Icon } from "astro-icon/components";
 import { type Project } from "../types/interfaces";
+import data from "../config/data.json";
 
 interface Props {
   projects?: Project[];
@@ -10,7 +11,7 @@ const { projects } = Astro.props;
 ---
 
 <div class="w-full flex flex-col py-24 xl:py-28 space-y-6 lg:space-y-0">
-  <div class="w-full">
+  <div class="w-full my-0 lg:mb-6">
     <h2
       class="font-outfit font-medium text-4xl md:text-5xl lg:text-6xl text-white mt-2"
     >
@@ -18,8 +19,23 @@ const { projects } = Astro.props;
     </h2>
   </div>
 
-  <div class="w-full mt-6 mask-r-from-80%">
-    <div class="swiper">
+  <div class="w-full lg:mask-r-from-80%">
+    <div id="swiper">
+      <div class="flex lg:hidden gap-2 my-2">
+        <div
+          id="swiper-prev"
+          class="w-10 h-10 flex items-center justify-center cursor-pointer rounded-full bg-white/10 hover:bg-white/40"
+        >
+          <Icon name="prev" />
+        </div>
+        <div
+          id="swiper-next"
+          class="w-10 h-10 flex items-center justify-center cursor-pointer rounded-full bg-white/10 hover:bg-white/40"
+        >
+          <Icon name="next" />
+        </div>
+      </div>
+
       <div class="swiper-wrapper">
         {
           projects?.length === 0 ? (
@@ -44,6 +60,7 @@ const { projects } = Astro.props;
                     alt={project.name}
                     loading="lazy"
                   />
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white" />
                   <div class="py-2">
                     <p>{project.name}</p>
                     <p class="text-sm text-white/70 truncate">
@@ -71,33 +88,35 @@ const { projects } = Astro.props;
       </div>
     </div>
   </div>
-</div>
 
-<script>
-  import Swiper from "swiper";
+  <script>
+    import Swiper from "swiper";
+    import { Navigation, Pagination } from "swiper/modules";
 
-  new Swiper(".swiper", {
-    spaceBetween: 30,
-    keyboard: true,
-    mousewheel: true,
-    cssMode: true,
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 10,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+    new Swiper("#swiper", {
+      spaceBetween: 30,
+      mousewheel: true,
+      keyboard: true,
+      cssMode: true,
+      modules: [Navigation, Pagination],
+      navigation: {
+        nextEl: "#swiper-next",
+        prevEl: "#swiper-prev",
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 30,
         },
       },
-      640: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 30,
-      },
-    },
-  });
-</script>
+    });
+  </script>
+</div>
