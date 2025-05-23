@@ -9,6 +9,7 @@
     "years_of_experience": 9,
     "technologies": [
       "JavaScript",
+      "TypeScript",
       "React",
       "Astro",
       "Tailwind CSS",
@@ -38,5 +39,67 @@
       }
     ]
   },
-  "projects": []
+  "projects": [
+    {
+      "name": "Color Contrast Checker",
+      "description": "Calculate the contrast ratio of text and background colors",
+      "link": "https://c3.eduardoalvarez.dev",
+      "image": "color-contrast-checker.png",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Next.js",
+        "Vercel"
+      ]
+    },
+    {
+      "name": "Vertical Timeline Component React",
+      "description": "A simple component to generate a responsive vertical timeline",
+      "link": "https://www.npmjs.com/package/vertical-timeline-component-react",
+      "image": "vertical-timeline-component-react.png",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Styled Components",
+        "Coveralls",
+        "Jest"
+      ]
+    },
+    {
+      "name": "Pretty Rating React",
+      "description": "A small and simple library that transform you rating in icons for you website",
+      "link": "https://www.npmjs.com/package/pretty-rating-react",
+      "image": "pretty-rating-react.png",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Styled Components",
+        "Coveralls",
+        "Jest"
+      ]
+    },
+    {
+      "name": "Node API Skeleton",
+      "description": "Starter project for a Node API with TS, testing and CI/CD setup",
+      "link": "https://github.com/Proskynete/node-api-skeleton",
+      "image": "node-api-skeleton.png",
+      "technologies": [
+        "Express",
+        "TypeScript",
+        "Jest",
+        "SuperTest",
+        "Swagger",
+        "Docker",
+        "Github Actions"
+      ]
+    },
+    {
+      "name": "Cypress Cucumber Boilerplate",
+      "description": "A boilerplate designed to run e2e tests using TS, Gherkins and Linter, generating a report at the end of the execution",
+      "link": "https://github.com/Proskynete/cypress-cucumber-boilerplate",
+      "image": "cypress-cucumber-boilerplate.png",
+      "technologies": ["TypeScript", "Cucumber", "Cypress"]
+    }
+  ]
 }

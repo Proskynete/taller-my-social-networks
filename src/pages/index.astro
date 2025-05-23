@@ -1,8 +1,13 @@
 ---
 import "../assets/css/styles.css";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
 import MyInformation from "../components/MyInformation.astro";
+import Projects from "../components/Projects.astro";
 
 import data from "../config/data.json";
 ---
@@ -18,8 +23,10 @@ import data from "../config/data.json";
     description={data.my_information.description}
     technologies={data.my_information.technologies}
     socialNetworks={data.my_information.social_networks}
-    projects={6}
+    projects={data.projects.length}
     yearsOfExperience={data.my_information.years_of_experience}
     talksAndWorkshops={6}
   />
+
+  <Projects projects={data.projects} />
 </Layout>

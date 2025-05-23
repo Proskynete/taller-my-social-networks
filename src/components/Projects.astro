@@ -1,0 +1,86 @@
+---
+import data from "../config/data.json";
+
+const { projects } = Astro.props;
+---
+
+<div class="w-full flex flex-col py-24 xl:py-28 space-y-6 lg:space-y-0">
+  <div class="w-full">
+    <h2
+      class="font-outfit font-medium text-4xl md:text-5xl lg:text-6xl text-white mt-2"
+    >
+      Mis Proyectos
+    </h2>
+  </div>
+
+  <div class="w-full mt-6 mask-r-from-80%">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {
+          projects.map((project: (typeof data.projects)[0]) => (
+            <div class="swiper-slide">
+              <a
+                class="block w-full rounded-lg bg-surface-1 duration-300 hover:opacity-75"
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={project.name}
+              >
+                <img
+                  class="w-full h-48 object-cover rounded-t-lg border border-white/10"
+                  src={`images/projects/${project.image}`}
+                  alt={project.name}
+                  loading="lazy"
+                />
+                <div class="py-2">
+                  <p>{project.name}</p>
+                  <p class="text-sm text-white/70 truncate">
+                    {project.description}
+                  </p>
+
+                  <div class="mt-3 flex items-center w-full">
+                    <div class="flex items-center space-x-2 overflow-x-auto">
+                      {project.technologies.map((technology) => (
+                        <div
+                          class="font-avenir rounded-md border border-gray-200 px-2 py-1 text-xs min-w-fit"
+                          title={technology}
+                        >
+                          {technology}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import Swiper from "swiper";
+
+  new Swiper(".swiper", {
+    spaceBetween: 30,
+    keyboard: true,
+    mousewheel: true,
+    cssMode: true,
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+    },
+  });
+</script>
