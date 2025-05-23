@@ -6,9 +6,10 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
+  integrations: [icon()],
   vite: {
     plugins: [tailwindcss()],
   },
-
-  integrations: [icon()],
+  site: "https://Proskynete.github.io",
+  base: "taller-my-social-networks",
 });
